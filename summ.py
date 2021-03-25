@@ -7,3 +7,26 @@
 
     * обработать возможные ошибки
 """
+try:
+    a = int(input('Введіть значення a:'))
+    b = int(input('Введіть значення b:'))
+    result = 0
+    mul = 1
+    if a == 0:
+        for i in range(b+1):
+            result += i
+        print('Сума ряду:', result)
+        for i in range(b+1):
+            if i % 2 != 0:
+                mul *= i
+        print('Добуток непарних чисел:', mul)
+    else:
+        for i in range(a, b+1):
+            result += i
+        print('Сума ряду:', result)
+        for i in range(a, b+1):
+            if i % 2 != 0:
+                mul *= i
+        print('Добуток непарних чисел:', mul)
+except ValueError:
+    print("Введено невірне значення")
