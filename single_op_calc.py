@@ -18,6 +18,7 @@ try:
             i = int(input('Введіть числа:'))
             sumary += i
         print('Результат:', sumary)
+        input("Continue? (Y/n) ")
     elif operation == '-':
         for i in range(1, n + 1):
             i = int(input('Введіть числа:'))
@@ -34,7 +35,7 @@ try:
     else:
         print('Не доступна операція!')
     if input("Continue? (Y/n) ") == "n":
-            break
+        break
 except ZeroDivisionError:
     print('На нуль ділити не можна!')
 except ValueError:

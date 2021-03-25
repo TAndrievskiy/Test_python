@@ -20,3 +20,21 @@
     ** по желанию, можете хранить рекордное число попыток
     и сообщать пользователю, если он поставил новый рекорд
 """
+
+import random
+
+count = 0
+n = random.randint(1, 100)
+while count < 100:
+    a = int(input('Введіть значення a:'))
+    count += 1
+    if a < n:
+        print('Число менше заданого')
+    elif a > n:
+        print('Число більше заданого')
+    elif a == n:
+        print('Ви вгадали число:', n, 'Кількість спроб', count)
+        input("Continue? (y/n) ")
+        if input("Continue? (y/n) ") == "n":
+            print("Bye!")
+            break
