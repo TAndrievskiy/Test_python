@@ -21,20 +21,30 @@
     и сообщать пользователю, если он поставил новый рекорд
 """
 
-import random
-
-count = 0
-n = random.randint(1, 100)
-while count < 100:
-    a = int(input('Введіть значення a:'))
-    count += 1
-    if a < n:
-        print('Число менше заданого')
-    elif a > n:
-        print('Число більше заданого')
-    elif a == n:
-        print('Ви вгадали число:', n, 'Кількість спроб', count)
-        input("Continue? (y/n) ")
-        if input("Continue? (y/n) ") == "n":
-            print("Bye!")
-            break
+try:
+    import random
+    count = 0
+    while count == 0:
+        n = random.randint(1, 100)
+        a = int(input('Введіть значення a:'))
+        while 0 < a < 100:
+            count += 1
+            if a < n:
+                print('Число менше заданого')
+                a = int(input('Введіть значення a:'))
+            elif a > n:
+                print('Число більше заданого')
+                a = int(input('Введіть значення a:'))
+            elif a == n:
+                print('Ви вгадали число:', n, 'Кількість спроб', count)
+                if input("Continue? (Y/n) ") == "Y":
+                    count = 0
+                    break
+                else:
+                    print("Bye!")
+                    break
+                break
+        else:
+            print('Число поза діапазоном')
+except ValueError:
+        print("Введено невірне значення")

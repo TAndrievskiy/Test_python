@@ -11,34 +11,30 @@
 try:
     n = int(input('Введіть значення n:'))
     operation = input('Введіть операцію(+,-,*,/):')
-    sumary = 0
-    mul = 1
+    x = int(input('Введіть числа:'))
     if operation == '+':
-        for i in range(1, n + 1):
+        for i in range(1, n):
             i = int(input('Введіть числа:'))
-            sumary += i
-        print('Результат:', sumary)
+            result = x + i
+        print('Результат:', result)
         input("Continue? (Y/n) ")
     elif operation == '-':
-        for i in range(1, n + 1):
+        for i in range(1, n):
             i = int(input('Введіть числа:'))
-            sumary -= i
-        print('Результат:', sumary)
+            i -= i
+        print('Результат:', i)
     elif operation == '*':
-        for i in range(1, n + 1):
+        for i in range(1, n):
             i = int(input('Введіть числа:'))
-            mul *= i
-        print('Результат:', mul)
+            i *= i
+        print('Результат:', i)
     elif operation == '/':
         i /= i
         print('Результат:', i)
     else:
         print('Не доступна операція!')
-    if input("Continue? (Y/n) ") == "n":
-        break
 except ZeroDivisionError:
     print('На нуль ділити не можна!')
 except ValueError:
     print("Введено невірне значення")
-
 
