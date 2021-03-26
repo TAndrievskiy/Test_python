@@ -25,7 +25,7 @@ try:
                 if n % 10 > a:
                     a = n % 10
                 n = n // 10
-            print("Наибольшее цифра:", a)
+            print("Наибольшая цифра:", a)
         elif menu_item == "2":
             n = int(input("Enter n: "))
             odd = 0
@@ -61,10 +61,9 @@ try:
                             if a == b:
                                 print(a, "", sep=",", end="")
                             break
+                print()
         elif menu_item == "5":
             print("Bye!")
             break
-        else:
-            print("Enter correct value")
 except ValueError:
-        print("Введено невірне значення")
+        print("Value not correct")
