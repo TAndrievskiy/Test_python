@@ -23,18 +23,29 @@ string = "Lorem, Ipsum, is, simply, dummy, text, of, the, printing, industry."
 #    Результат: 'Lorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy text of the printing industry.'
 
 string = string.replace(",", "")
-l = len(string)
+length = len(string)
 count = 0
-print("Результат:" +  string)
+s = 0
+space = 0
+ind_1 = 0
+ind_2 = 0
+print("Результат:" + string)
 print("Результат:", string.rindex("i"))
-for i in range(l):
-    if string[i] == "i" or string[i] == "I" :
-        count +=1
+for i in range(length):
+    if string[i] == "i" or string[i] == "I":
+        count += 1
 print("Результат:", count)
-for i in range(l):
-
-
-print("Результат:" + string[:int(l / 2)] * 3 + string[int(l / 2):])
-
+for i in range(length):
+    if string[i] == "s":
+        s += 1
+        if s == 3:
+            ind_1 = i
+for i in range(length):
+    if string[i] == " ":
+        space += 1
+        if space == 6:
+            ind_2 = i
+print("Результат:" + string[ind_1:ind_2])
+print("Результат:" + string[:int(length / 2)] * 3 + string[int(length / 2):])
 
 
