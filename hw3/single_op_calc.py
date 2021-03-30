@@ -12,29 +12,30 @@ try:
     while True:
         n = int(input('Введіть значення n:'))
         operation = input('Введіть операцію(+,-,*,/):')
-        summary = 0
-        mul = 1
+        result = 0
         while n > 0:
+            i = int(input('Введіть числа:'))
+            result = i
             if operation == '+':
-                for i in range(1, n + 1):
+                for i in range(n - 1):
                     i = int(input('Введіть числа:'))
-                    summary += i
-                print('Результат:', summary)
+                    result += i
+                print('Результат:', result)
             elif operation == '-':
-                for i in range(1, n + 1):
+                for i in range(n - 1):
                     i = int(input('Введіть числа:'))
-                    i -= i
-                print('Результат:', abs(i))
+                    result -= i
+                print('Результат:', result)
             elif operation == '*':
-                for i in range(1, n + 1):
+                for i in range(n - 1):
                     i = int(input('Введіть числа:'))
-                    mul *= i
-                print('Результат:', mul)
+                    result *= i
+                print('Результат:', result)
             elif operation == '/':
-                for i in range(1, n + 1):
+                for i in range(n - 1):
                     i = int(input('Введіть числа:'))
-                    i /= i
-                print('Результат:', i)
+                    result /= i
+                print('Результат:', result)
             else:
                 print('Не доступна операція!')
             if input("Continue? (Y/n) ") == "Y":
@@ -48,4 +49,5 @@ except ZeroDivisionError:
     print('На нуль ділити не можна!')
 except ValueError:
     print("Введено невірне значення")
+
 
