@@ -21,14 +21,14 @@ string = (
                 .replace("?", " ")
                 )
 words = string.split()
-l = len(string)
+length = len(string)
 count = 0
 _max_ = 0
 begin = 0
 print("Кількість слів:", len(words))
-for i in range(l):
+for i in range(length):
     if string[i] != " ":
-        count +=1
+        count += 1
     else:
         if count > _max_:
             _max_ = count
