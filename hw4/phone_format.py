@@ -28,13 +28,13 @@ while True:
     number = input("Введіть номер:")
     number = (
         number.replace("-", "")
-            .replace(" ", "")
-            .replace("+", "")
-            .replace("-", "")
-            .replace("(", "")
-            .replace(")", "")
+              .replace(" ", "")
+              .replace("+", "")
+              .replace("-", "")
+              .replace("(", "")
+              .replace(")", "")
     )
-    if number.isdigit() == False:
+    if number.isdigit() is False:
         print('Невірне значення')
         continue
     elif len(number) < 9 or len(number) > 13:
@@ -47,4 +47,3 @@ while True:
         else:
             print("Bye!")
             break
-
