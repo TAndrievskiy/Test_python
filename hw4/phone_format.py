@@ -26,15 +26,25 @@
 """
 while True:
     number = input("Введіть номер:")
-    num = number.split()
-    if len(number) < 9:
+    number = (
+        number.replace("-", "")
+            .replace(" ", "")
+            .replace("+", "")
+            .replace("-", "")
+            .replace("(", "")
+            .replace(")", "")
+    )
+    if number.isdigit() == False:
+        print('Невірне значення')
+        continue
+    elif len(number) < 9 or len(number) > 13:
         print("Невірна кількість цифр")
-    elif number.isdigit():
-        for i in range(len(number)):
-            number[i] = number[i].replace("-", "").replace(" ", "").replace("-", "").replace("+", "").replace("(", "").replace(")", "")
-        print('Номер: 38' + number[:len(number)])
+        continue
+    elif number.isdigit() and len(number) >= 10:
+        print('Номер: 38' + number[len(number) - 10:])
         if input("Continue? (Y/n) ") == "Y":
             continue
         else:
             print("Bye!")
             break
+
