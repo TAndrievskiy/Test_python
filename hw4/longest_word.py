@@ -12,7 +12,7 @@
     Самое длинное слово: "learning" (8 символов)
 
 """
-string = input("Введіть текст:")
+string = input("Введіть текст:") + " "
 string = (
                 string.replace(",", "")
                 .replace(".", " ")
