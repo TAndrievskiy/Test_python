@@ -66,8 +66,21 @@ def generate_medium_pass():
     return password
 
 
+def auto_generation_hard_pass():
+    length = random.randint(8, 16)
+    return length
+
+
 def generate_hard_pass():
-    hard_pass_len = is_correct_hard_length()
+    choice = input(
+        "1. Autogenerate password.\n"
+        "2. Custom length and generate password.\n"
+        "Chose and press Enter: "
+    )
+    if choice == "1":
+        hard_pass_len = auto_generation_hard_pass()
+    elif choice == "2":
+        hard_pass_len = is_correct_hard_length()
     password = ""
     count_1 = 0
     count_2 = 0
@@ -114,7 +127,7 @@ def is_correct_hard_length() -> int:
 
 def is_int_length():
     try:
-        length = int(input("Enter the pass length(from 1 to 8):"))
+        length = int(input("Enter the pass length:"))
         return length
     except ValueError:
         print("Incorrect value!")
