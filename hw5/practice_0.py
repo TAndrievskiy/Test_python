@@ -18,11 +18,11 @@ import string
 
 def main():
     while True:
-        print("Введите имя пользователя:", end=" ")
+        print("Enter username:", end=" ")
         login = input()
         username = get_username(login)
         if get_username(login):
-            print(f"Добро пожаловать, {username}!")
+            print(f"Hi, {username}!")
             break
         else:
             print("Try again!")
