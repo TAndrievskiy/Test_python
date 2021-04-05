@@ -26,4 +26,4 @@ else:
             string_format += string[i]
         elif string[i] == ")":
             count -= 1
-    print("Резульатат:" + string_format)
+    print("Результат:" + string_format)
