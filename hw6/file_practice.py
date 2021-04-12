@@ -27,8 +27,8 @@
     В средину файла file_practice.txt вставить строку " *some inserted text* "
     (средина - имеется в виду средина текста)
 """
-
 from pathlib import Path
+
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -73,4 +73,4 @@ def main():
 
 
 if __name__ == "__main__":
-        main()
+    main()
