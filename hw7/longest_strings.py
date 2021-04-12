@@ -20,6 +20,7 @@ def longest_strings(list_in: list) -> list:
             longest_string.append(string)
     return longest_string
 
+
 t_1 = ["x"]
 assert longest_strings(t_1) == ["x"]
 
