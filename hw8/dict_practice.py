@@ -76,5 +76,5 @@ user_data = {
     "Jane": {"role": "developer", "salary": 2000},
 }
 name_data = user_data.setdefault("Jane")
-name_data.update({"salary" : 2500})
+name_data.update({"salary": 2500})
 print(user_data)
