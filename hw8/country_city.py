@@ -25,19 +25,20 @@ def main():
 
 def get_country(data):
     input_city = input("Enter the city:")
-    for country, city in data.items():
-        if input_city in city:
+    for country, cities in data.items():
+        if input_city in cities:
             print(f"Country: {country}")
             return country
-        else:
-            print("Wrong city, try again!")
-            return get_country(data)
+    else:
+        print("Wrong city, try again!")
+        return get_country(data)
 
 
 def grouping_data(data):
     country_list = list(data.keys())
     countries = dict.fromkeys(["country"], country_list)
-    new_data = countries | capitals_and_cities(data)
+    new_data = capitals_and_cities(data)
+    new_data.append(countries)
     pprint(new_data)
 
 
@@ -47,6 +48,7 @@ def capitals_and_cities(data):
     cities_list = list()
     capital = ""
     city = ""
+    data_capitals_and_cities = []
     for cities in city_list:
         for _ in cities:
             capital = cities[0]
@@ -55,7 +57,9 @@ def capitals_and_cities(data):
         capitals_list.append(capital)
     cities = dict.fromkeys(["cities"], cities_list)
     capitals = dict.fromkeys(["capitals"], capitals_list)
-    return capitals | cities
+    data_capitals_and_cities.append(capitals)
+    data_capitals_and_cities.append(cities)
+    return data_capitals_and_cities
 
 
 if __name__ == "__main__":
